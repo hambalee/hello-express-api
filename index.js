@@ -1,9 +1,9 @@
-const express = require("express")
+import express from "express"
 
 const app = express()
 
 app.get("/", function(request, response){
-    response.send("<h1>Hello</h1>")
+    response.json({title: "Once upon an Algorithm"})
 })
 
 app.listen(8000)
