@@ -40,4 +40,11 @@ app.patch("/book/:id", function (request, response) {
     response.json(result)
 })
 
+app.delete("/book/:id", function (request, response) {
+    const { id } = request.params
+    const statement = db.prepare("DELETE from books WHERE id = ?")
+    const result = statement.run(id)
+    response.json(result)
+})
+
 app.listen(8000)
